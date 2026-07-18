@@ -199,7 +199,7 @@ def prepare_adapter(args: SftArguments, model, *, template=None, train_dataset=N
                     stable_gamma=args.lora_ga_stable_gamma,
                 )
             else:
-                model = Swift.prepare_model(model, lora_config)
+                model = Swift.prepare_model(model, lora_config, autocast_adapter_dtype=False)
             logger.info(f'lora_config: {lora_config}')
         elif args.tuner_backend == 'unsloth':
             if args.resume_from_checkpoint is None:
