@@ -199,6 +199,7 @@ Tips:
 - The `--model_author` and `--model_name` parameters are only effective when the dataset includes `swift/self-cognition`.
 - To train with a different model, simply modify `--model <model_id/model_path>`.
 - By default, **ModelScope** is used for downloading models and datasets. If you want to use HuggingFace, simply specify `--use_hf true`.
+- For a local `Qwen3.6-35B-A3B` 8xA100 LoRA SFT entry script, see [examples/models/qwen3_6/local_qwen3_6_35b_a100_8gpu_sft.sh](examples/models/qwen3_6/local_qwen3_6_35b_a100_8gpu_sft.sh).
 
 After training is complete, use the following command to infer with the trained weights:
 

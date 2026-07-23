@@ -193,6 +193,7 @@ swift sft \
 - `--model_author`和`--model_name`参数只有当数据集中包含`swift/self-cognition`时才生效。
 - 如果要使用其他模型进行训练，你只需要修改`--model <model_id/model_path>`即可。
 - 默认使用**ModelScope**进行模型和数据集的下载。如果要使用HuggingFace，指定`--use_hf true`即可。
+- 如果你要在本地 `Qwen3.6-35B-A3B` 上使用 `8xA100` 做 LoRA SFT，可直接参考脚本：[examples/models/qwen3_6/local_qwen3_6_35b_a100_8gpu_sft.sh](examples/models/qwen3_6/local_qwen3_6_35b_a100_8gpu_sft.sh)。
 
 训练完成后，使用以下命令对训练后的权重进行推理：
 - 这里的`--adapters`需要替换成训练生成的last checkpoint文件夹。由于adapters文件夹中包含了训练的参数文件`args.json`，因此不需要额外指定`--model`，`--system`，swift会自动读取这些参数。如果要关闭此行为，可以设置`--load_args false`。
